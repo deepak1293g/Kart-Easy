@@ -43,7 +43,7 @@ const SearchPage = () => {
           <div className="text-center text-lg">Loading...</div>
         ) : query ? (
           <>
-            <h1 className="text-xl mb-4">Search Results for "{query}"</h1>
+            {/* <h1 className="text-xl mb-4">Search Results for "{query}"</h1> */}
             {results.length > 0 ? (
               <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 {results.map((product) => (

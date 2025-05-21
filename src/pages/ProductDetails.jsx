@@ -3,12 +3,30 @@ import Wrapper from "@/components/Wrapper";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import "../../src/index.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../store/cartSlice";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
   const location = useLocation();
   const product = location.state?.product;
 
   if (!product) return null;
+
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
+  // Function to check if the product is already in the cart
+  const isProductInCart = cartItems.some((item) => item.id === product.id);
+
+  const addToCartHandler = () => {
+    if (isProductInCart) {
+      toast.info("This product is already in your cart.");
+    } else {
+      dispatch(addToCart(product));
+      toast.success("Product added to cart!");
+    }
+  };
 
   return (
     <>
@@ -121,7 +139,10 @@ const ProductDetails = () => {
               </div>
 
               {/* ADD TO CART BUTTON START */}
-              <button className="w-full py-4 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75 cursor-pointer">
+              <button
+                className="w-full py-4 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75 cursor-pointer"
+                onClick={addToCartHandler}
+              >
                 Add to Cart
               </button>
             </div>

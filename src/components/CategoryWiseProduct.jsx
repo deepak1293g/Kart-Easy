@@ -43,7 +43,6 @@ const CategoryWiseProduct = () => {
     fetchProducts();
   }, []);
 
-  console.log(productsByCategory);
 
   const handleScroll = (containerId, direction) => {
     const container = document.getElementById(containerId);

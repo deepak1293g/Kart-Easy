@@ -51,7 +51,7 @@ const ProductListPage = () => {
   return (
     <div className="w-full md:py-10">
       <Wrapper>
-        <div className="grid grid-cols-[250px_1fr] h-screen">
+        <div className="grid grid-cols-[150px_1fr] h-screen">
           {/* Left: Category List */}
           <div className="bg-gray-100 p-4 overflow-y-auto border-r max-h-screen">
             <h2 className="text-lg font-bold mb-3">Categories</h2>

@@ -1,11 +1,12 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useState, useMemo } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import Search from "./Search";
 import { CircleUserRound } from "lucide-react";
 import useMobile from "../hooks/useMobile";
 import { BsCart } from "react-icons/bs";
+import { useSelector, useDispatch } from "react-redux";
 
 const Header = () => {
   const [isMobile] = useMobile();
@@ -25,6 +26,17 @@ const Header = () => {
   const handleCartClick = () => {
     navigate("/cart");
   };
+
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const [loading, setLoading] = useState(false);
+
+  const subTotal = useMemo(() => {
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+  }, [cartItems]);
 
   return (
     <header className="h-24 lg:h-20 lg:shadow-md sticky top-0 z-40 flex flex-col justify-center gap-1 bg-white">
@@ -72,8 +84,8 @@ const Header = () => {
                   <BsCart size={30} />
                 </div>
                 <div className="font-semibold text-sm">
-                  <p>Items</p>
-                  <p>Price</p>
+                  <p>{cartItems.length} Items</p>
+                  <p>Total:&#8377; {subTotal.toFixed(2)}</p>
                 </div>
               </button>
             </div>
