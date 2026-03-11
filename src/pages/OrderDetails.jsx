@@ -134,7 +134,7 @@ const OrderDetails = () => {
 
     return (
         <div ref={receiptRef} className="w-full min-h-[calc(100vh-80px)] bg-white font-urbanist text-neutral-900 pb-20">
-            <div className="max-w-[1400px] mx-auto px-6 py-6 md:py-12">
+            <div className="max-w-[1400px] mx-auto px-8 py-6 md:py-12">
 
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-6 md:mb-8 border-b border-neutral-100 pb-4 md:pb-6">
