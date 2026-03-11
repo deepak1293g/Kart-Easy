@@ -191,31 +191,6 @@ const OrderDetails = () => {
                         {/* Left Side: Items & Status */}
                         <div className="lg:col-span-8 space-y-12">
 
-                            {/* Status Timeline */}
-                            <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.2, duration: 0.8 }}
-                                className="space-y-6"
-                            >
-                                <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-neutral-400">Logistic Sequence Flow</h2>
-                                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 px-2">
-                                    {[
-                                        { label: 'Registered', sub: order.date, done: true },
-                                        { label: 'Processing', sub: 'Verified', done: order.status !== 'Pending' },
-                                        { label: 'Shipment', sub: 'In Transit', done: order.status === 'Delivered' },
-                                        { label: 'Arrival', sub: 'Completed', done: order.status === 'Delivered' }
-                                    ].map((step, idx) => (
-                                        <div key={idx} className={`p-6 rounded-[2rem] border transition-all duration-500 ${step.done ? 'bg-white border-neutral-100 shadow-xl shadow-neutral-100/50' : 'bg-neutral-50/50 border-neutral-50 opacity-40'}`}>
-                                            <div className="flex items-center gap-3 mb-3">
-                                                <div className={`w-3 h-3 rounded-full ${step.done ? 'bg-orange-500' : 'bg-neutral-200'}`} />
-                                                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-900">{step.label}</span>
-                                            </div>
-                                            <p className="text-[11px] font-bold text-neutral-400 uppercase tracking-tighter">{step.sub}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </motion.div>
 
                             {/* Shipping Info (Visible on Mobile/Tablet, Hidden on Laptop) */}
                             <motion.div
