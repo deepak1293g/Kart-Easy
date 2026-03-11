@@ -41,16 +41,16 @@ const Search = () => {
   }, [query]);
 
   return (
-    <div className="w-full lg:w-[500px] h-10 lg:h-14 rounded-xl lg:rounded-2xl border border-gray-100 bg-gray-50/50 backdrop-blur-xl focus-within:bg-white focus-within:ring-8 focus-within:ring-black/5 focus-within:border-black transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-black/5 flex items-center justify-between group overflow-hidden">
+    <div className="w-full lg:w-[480px] h-10 lg:h-12 rounded-xl lg:rounded-2xl border border-neutral-100 bg-neutral-50/50 backdrop-blur-md focus-within:bg-white focus-within:ring-4 focus-within:ring-black/5 focus-within:border-neutral-900 transition-all duration-300 shadow-sm flex items-center justify-between group overflow-hidden">
       <div className="font-medium w-full h-full flex items-center justify-between text-base">
         {!isSearchPage ? (
           <div
             className="w-full h-full flex items-center px-4 lg:px-5 cursor-pointer text-gray-400 hover:text-black transition-all duration-300"
             onClick={redirectToSearchPage}
           >
-            <div className="flex items-center gap-3 lg:gap-4 w-full">
-              <BsSearch className="text-neutral-500 group-hover:text-black transition-colors shrink-0" size={16} />
-              <div className="flex-1 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] text-neutral-500 group-hover:text-black truncate">
+            <div className="flex items-center gap-3 w-full">
+              <BsSearch className="text-neutral-400 group-hover:text-black transition-colors shrink-0" size={14} />
+              <div className="flex-1 text-[9px] lg:text-[10px] font-black uppercase tracking-[0.3em] text-neutral-400 group-hover:text-neutral-900 truncate">
                 <TypeAnimation
                   sequence={[
                     'Search Premium Audio',
