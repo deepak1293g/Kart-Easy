@@ -83,7 +83,7 @@ const Header = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="glass sticky top-0 z-40 w-full py-2 lg:py-4 transition-all duration-500"
+      className="bg-white/95 backdrop-blur-md border-b border-neutral-100 sticky top-0 z-40 w-full py-2 lg:py-4 transition-all duration-500 shadow-sm"
     >
       <div className="max-w-[1400px] mx-auto flex items-center px-6 justify-between gap-4 md:gap-14">
         <motion.div

@@ -151,7 +151,7 @@ const OrderDetails = () => {
                                 <span className="text-[10px] font-black uppercase tracking-[0.4em] text-neutral-400">Order Ledger Interface</span>
                             </div>
                             <h1 className="text-4xl md:text-7xl font-black tracking-tightest uppercase italic text-black leading-[0.85]">
-                                Order <span className="text-orange-600">Protocol.</span>
+                                Order <span className="text-orange-600">Details.</span>
                             </h1>
                             <p className="text-[10px] font-bold text-neutral-400 uppercase tracking-[0.3em]">
                                 Sequence ID: <span className="text-neutral-900 select-all font-black">{order.id}</span>
@@ -169,7 +169,7 @@ const OrderDetails = () => {
                                 {downloading ? (
                                     <div className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin" />
                                 ) : <Download size={16} />}
-                                <span>Log Export</span>
+                                <span>Download</span>
                             </motion.button>
 
                             <div className="bg-neutral-50 px-8 py-4 rounded-2xl border border-neutral-100 flex flex-col justify-center">
@@ -177,13 +177,7 @@ const OrderDetails = () => {
                                 <p className="text-sm font-black text-neutral-900 lowercase tracking-tight">{order.date}</p>
                             </div>
 
-                            <div className={`px-5 py-4 rounded-2xl border text-[10px] font-black uppercase tracking-widest flex items-center gap-3 ${order.status === 'Delivered'
-                                ? 'bg-emerald-50 text-emerald-600 border-emerald-100'
-                                : 'bg-orange-50 text-orange-600 border-orange-100'
-                                }`}>
-                                <div className={`w-2 h-2 rounded-full ${order.status === 'Delivered' ? 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]' : 'bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.5)]'}`} />
-                                {order.status}
-                            </div>
+
                         </div>
                     </motion.div>
 
@@ -197,26 +191,25 @@ const OrderDetails = () => {
                                 initial={{ opacity: 0, scale: 0.98 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.3, duration: 0.8 }}
-                                className="lg:hidden bg-neutral-900 rounded-[2.5rem] p-8 md:p-12 space-y-8 shadow-2xl shadow-black/20"
+                                className="lg:hidden bg-white border border-neutral-100 rounded-3xl p-6 space-y-6"
                             >
-                                <div className="flex items-center justify-between border-b border-white/10 pb-6">
-                                    <h3 className="text-[11px] font-black uppercase tracking-[0.4em] text-neutral-400">Destination Registry</h3>
-                                    <MapPin size={20} className="text-orange-500" />
+                                <div className="flex items-center justify-between border-b border-neutral-50 pb-4">
+                                    <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-neutral-400">Destination Registry</h3>
+                                    <MapPin size={18} className="text-orange-500" />
                                 </div>
-
-                                <div className="space-y-8">
-                                    <div className="space-y-2">
-                                        <p className="text-[9px] font-black uppercase tracking-widest text-neutral-500">Coordinate Address</p>
-                                        <p className="text-base font-bold text-white leading-relaxed">{order.shippingDetails?.address || "Address Detail"}</p>
+                                <div className="space-y-6">
+                                    <div className="space-y-1">
+                                        <p className="text-[8px] font-black uppercase tracking-widest text-neutral-400">Coordinate Address</p>
+                                        <p className="text-sm font-bold text-neutral-900 leading-tight">{order.shippingDetails?.address || "Address Detail"}</p>
                                     </div>
-                                    <div className="grid grid-cols-2 gap-8">
-                                        <div className="space-y-2">
-                                            <p className="text-[9px] font-black uppercase tracking-widest text-neutral-500">Regional Cluster</p>
-                                            <p className="text-base font-bold text-white italic">{order.shippingDetails?.city || "City"}</p>
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div className="space-y-1">
+                                            <p className="text-[8px] font-black uppercase tracking-widest text-neutral-400">Regional Cluster</p>
+                                            <p className="text-sm font-bold text-neutral-900 italic">{order.shippingDetails?.city || "City"}</p>
                                         </div>
-                                        <div className="space-y-2">
-                                            <p className="text-[9px] font-black uppercase tracking-widest text-neutral-500">Contact Line</p>
-                                            <p className="text-base font-black text-orange-500 tracking-widest uppercase">{order.shippingDetails?.phone || "Private"}</p>
+                                        <div className="space-y-1">
+                                            <p className="text-[8px] font-black uppercase tracking-widest text-neutral-400">Contact Line</p>
+                                            <p className="text-sm font-black text-orange-600 tracking-widest uppercase">{order.shippingDetails?.phone || "Private"}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -238,27 +231,27 @@ const OrderDetails = () => {
                                     {order.items.map((item, idx) => (
                                         <motion.div
                                             key={idx}
-                                            whileHover={{ x: 10 }}
-                                            className="bg-white rounded-[2rem] p-6 sm:p-8 border border-neutral-100 flex flex-row items-center gap-6 sm:gap-10 hover:shadow-2xl hover:shadow-neutral-100/50 hover:border-neutral-200 transition-all duration-500 group"
+                                            whileHover={{ x: 5 }}
+                                            className="bg-white rounded-2xl p-4 sm:p-5 border border-neutral-100 flex flex-row items-center gap-4 sm:gap-6 hover:shadow-lg hover:shadow-neutral-100/30 transition-all duration-300 group"
                                         >
-                                            <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-[1.5rem] overflow-hidden shrink-0 bg-neutral-50 border border-neutral-100 flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-500">
+                                            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 bg-neutral-50 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-500">
                                                 {item.thumbnail || item.image ? (
                                                     <img src={item.thumbnail || item.image} className="w-full h-full object-contain" alt="" />
                                                 ) : (
-                                                    <ShoppingBag size={24} className="text-neutral-300" />
+                                                    <ShoppingBag size={20} className="text-neutral-300" />
                                                 )}
                                             </div>
-                                            <div className="flex-1 min-w-0 text-left space-y-2">
-                                                <h3 className="font-black text-sm sm:text-xl text-neutral-900 tracking-tightest leading-tight line-clamp-2 uppercase italic">{item.title}</h3>
-                                                <div className="flex flex-wrap items-center justify-start gap-4 text-[9px] font-black text-neutral-400 uppercase tracking-[0.2em]">
-                                                    <span className="bg-neutral-50 px-2.5 py-1 rounded">Quantity: {item.quantity}</span>
+                                            <div className="flex-1 min-w-0 text-left space-y-1">
+                                                <h3 className="font-black text-xs sm:text-sm text-neutral-900 tracking-tightest leading-tight line-clamp-2 uppercase italic">{item.title}</h3>
+                                                <div className="flex flex-wrap items-center justify-start gap-2 text-[8px] font-bold text-neutral-400 uppercase tracking-widest">
+                                                    <span>Qty: {item.quantity}</span>
                                                     <span className="text-neutral-200">|</span>
-                                                    <span>Unit Value: ₹{item.price.toLocaleString()}</span>
+                                                    <span>₹{item.price.toLocaleString()}</span>
                                                 </div>
                                             </div>
-                                            <div className="shrink-0 text-right space-y-1">
-                                                <p className="text-[9px] font-black text-neutral-300 uppercase tracking-[0.3em] italic">Subtotal</p>
-                                                <p className="text-xl sm:text-3xl font-black text-neutral-900 tracking-tightest leading-none">₹{(item.price * item.quantity).toLocaleString()}</p>
+                                            <div className="shrink-0 text-right space-y-0.5">
+                                                <p className="text-[8px] font-black text-neutral-300 uppercase tracking-widest italic">Subtotal</p>
+                                                <p className="text-sm sm:text-lg font-black text-neutral-900 tracking-tighter leading-none">₹{(item.price * item.quantity).toLocaleString()}</p>
                                             </div>
                                         </motion.div>
                                     ))}
@@ -275,25 +268,25 @@ const OrderDetails = () => {
                         >
 
                             {/* Shipping Info (Visible on Laptop, Hidden on Mobile/Tablet) */}
-                            <div className="hidden lg:block bg-neutral-900 rounded-[2.5rem] p-10 space-y-10 shadow-2xl shadow-black/30 group">
-                                <div className="flex items-center justify-between border-b border-white/10 pb-6">
-                                    <h3 className="text-[11px] font-black uppercase tracking-[0.4em] text-neutral-400">Destination Registry</h3>
-                                    <MapPin size={20} className="text-orange-500 group-hover:scale-110 transition-transform" />
+                            <div className="hidden lg:block bg-white border border-neutral-100 rounded-[2rem] p-8 space-y-8 shadow-sm group">
+                                <div className="flex items-center justify-between border-b border-neutral-50 pb-5">
+                                    <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-neutral-400">Destination Registry</h3>
+                                    <MapPin size={18} className="text-orange-500 group-hover:scale-110 transition-transform" />
                                 </div>
 
-                                <div className="space-y-8">
-                                    <div className="space-y-2">
-                                        <p className="text-[9px] font-black uppercase tracking-widest text-neutral-500">Coordinate Address</p>
-                                        <p className="text-base font-bold text-white leading-relaxed">{order.shippingDetails?.address || "Address Detail"}</p>
+                                <div className="space-y-6">
+                                    <div className="space-y-1.5">
+                                        <p className="text-[8px] font-black uppercase tracking-widest text-neutral-400">Coordinate Address</p>
+                                        <p className="text-sm font-bold text-neutral-900 leading-relaxed">{order.shippingDetails?.address || "Address Detail"}</p>
                                     </div>
-                                    <div className="grid grid-cols-2 gap-8">
-                                        <div className="space-y-2">
-                                            <p className="text-[9px] font-black uppercase tracking-widest text-neutral-500">Regional Cluster</p>
-                                            <p className="text-base font-bold text-white italic">{order.shippingDetails?.city || "City"}</p>
+                                    <div className="grid grid-cols-2 gap-6">
+                                        <div className="space-y-1.5">
+                                            <p className="text-[8px] font-black uppercase tracking-widest text-neutral-400">Regional Cluster</p>
+                                            <p className="text-sm font-bold text-neutral-900 italic">{order.shippingDetails?.city || "City"}</p>
                                         </div>
-                                        <div className="space-y-2">
-                                            <p className="text-[9px] font-black uppercase tracking-widest text-neutral-500">Contact Line</p>
-                                            <p className="text-base font-black text-orange-500 tracking-widest uppercase">{order.shippingDetails?.phone || "Private"}</p>
+                                        <div className="space-y-1.5">
+                                            <p className="text-[8px] font-black uppercase tracking-widest text-neutral-400">Contact Line</p>
+                                            <p className="text-sm font-black text-orange-600 tracking-widest uppercase">{order.shippingDetails?.phone || "Private"}</p>
                                         </div>
                                     </div>
                                 </div>
