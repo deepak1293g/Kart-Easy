@@ -232,18 +232,18 @@ const OrderDetails = () => {
 
                         {/* Order Items */}
                         <div className="space-y-6">
-                            <div className="flex items-center justify-between">
+                            <div className="flex items-center justify-between mb-4">
                                 <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-neutral-500">Inventory Allocation</h2>
-                                <span className="text-[9px] font-bold text-neutral-500 uppercase tracking-widest">{order.items.length} Secure Assets</span>
+                                <span className="text-[9px] font-bold text-neutral-500 uppercase tracking-widest">{order.items.length} Assets</span>
                             </div>
 
                             <div className="space-y-4">
                                 {order.items.map((item, idx) => (
                                     <div
                                         key={idx}
-                                        className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 border border-neutral-100 flex flex-row items-center gap-4 sm:gap-6 hover:border-neutral-200 transition-all duration-300"
+                                        className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 border border-neutral-100 flex flex-row items-center gap-5 sm:gap-8 hover:border-neutral-200 transition-all duration-300"
                                     >
-                                        <div className="w-16 h-16 sm:w-20 md:w-20 md:h-20 rounded-xl overflow-hidden shrink-0 bg-neutral-50 border border-neutral-100 flex items-center justify-center p-1">
+                                        <div className="w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-xl overflow-hidden shrink-0 bg-neutral-50 border border-neutral-100 flex items-center justify-center p-1.5 shadow-sm">
                                             {item.thumbnail || item.image ? (
                                                 <img src={item.thumbnail || item.image} className="w-full h-full object-cover rounded-lg" alt="" />
                                             ) : (
@@ -297,13 +297,13 @@ const OrderDetails = () => {
                         </div>
 
                         {/* Financial Summary */}
-                        <div className="bg-white rounded-3xl p-6 md:p-8 border border-neutral-100 shadow-xl shadow-neutral-100/50 space-y-6 md:space-y-8">
-                            <div className="flex items-center justify-between border-b border-neutral-100 pb-4 md:pb-5">
-                                <div className="flex items-center gap-2">
-                                    <CreditCard size={16} className="text-neutral-500" />
+                        <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-neutral-100 shadow-xl shadow-neutral-100/50 space-y-8">
+                            <div className="flex items-center justify-between border-b border-neutral-100 pb-5 md:pb-6">
+                                <div className="flex items-center gap-3">
+                                    <CreditCard size={18} className="text-neutral-500" />
                                     <span className="text-[10px] font-black uppercase tracking-[0.3em] text-neutral-500">Payment Protocol</span>
                                 </div>
-                                <span className="text-[10px] font-black uppercase tracking-widest text-neutral-900">
+                                <span className="text-[10px] font-black uppercase tracking-widest text-neutral-900 border px-3 py-1 rounded-lg">
                                     {order.paymentMethod?.toUpperCase() || 'MASTER'}
                                 </span>
                             </div>
@@ -327,10 +327,10 @@ const OrderDetails = () => {
 
                             <div className="space-y-4 pt-10 border-t-2 border-dashed border-neutral-100">
                                 <p className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em]">Final Settlement</p>
-                                <div className="flex items-baseline justify-between">
-                                    <h3 className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tighter">₹{order.total.toLocaleString()}</h3>
-                                    <div className="w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center">
-                                        <ShieldCheck size={20} />
+                                <div className="flex items-baseline justify-between gap-4">
+                                    <h3 className="text-4xl sm:text-5xl md:text-6xl font-black text-neutral-900 tracking-tighter shrink-0">₹{order.total.toLocaleString()}</h3>
+                                    <div className="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center shadow-lg shadow-black/10 shrink-0">
+                                        <ShieldCheck size={24} />
                                     </div>
                                 </div>
                             </div>
