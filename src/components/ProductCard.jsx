@@ -13,11 +13,16 @@ function ProductCard({ product, isSmall, noY = true }) {
   const location = product.brand || "Elite Store";
   const city = "Jakarta Center";
   const soldCount = Math.floor(Math.random() * 8000) + 500;
+  const slug = product.title
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '') // Remove non-alphanumeric/space/hyphens
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-'); // Replace multiple hyphens with single hyphen
 
   return (
     <ScrollReveal noY={noY} className="h-full">
       <Link
-        to={`/productdetails/${product.id}`}
+        to={`/product/${product.id}/${slug}`}
         state={{ product }}
         className={`group relative flex flex-col h-full bg-white rounded-3xl border border-gray-100 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-2 overflow-hidden font-urbanist`}
       >
@@ -29,7 +34,7 @@ function ProductCard({ product, isSmall, noY = true }) {
         </div>
 
         {/* Thumbnail Section */}
-        <div className={`w-full aspect-square relative overflow-hidden bg-white flex items-center justify-center ${isSmall ? "p-2.5 md:p-4" : "p-8"} transition-colors group-hover:bg-neutral-50`}>
+        <div className={`w-full aspect-square relative overflow-hidden bg-white flex items-center justify-center ${isSmall ? "p-1.5 sm:p-2.5 md:p-4" : "p-8"} transition-colors group-hover:bg-neutral-50`}>
           <img
             src={product.thumbnail}
             alt={product.title}
@@ -39,7 +44,7 @@ function ProductCard({ product, isSmall, noY = true }) {
         </div>
 
         {/* Info Section */}
-        <div className={`${isSmall ? "p-2.5 md:p-4" : "p-6"} flex flex-col flex-1 space-y-2 md:space-y-3`}>
+        <div className={`${isSmall ? "p-2 sm:p-2.5 md:p-4" : "p-6"} flex flex-col flex-1 space-y-2 md:space-y-3`}>
           <div className="space-y-1">
             <h2 className={`${isSmall ? "text-[10px] md:text-sm" : "text-sm md:text-base"} font-black text-black line-clamp-2 leading-tight uppercase tracking-tight group-hover:text-orange-600 transition-colors`}>
               {product.title}

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { Link, useLocation, useNavigate, matchPath } from "react-router-dom";
 import logo from "../assets/logo.png";
 import Search from "./Search";
@@ -37,14 +37,32 @@ const Header = () => {
     pathname === "/edit-profile" ||
     pathname === "/my-orders" ||
     pathname === "/success" ||
+    pathname === "/checkout" ||
     matchPath("/order-details/:id", pathname);
 
   const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
-  // Close dropdown on navigation
-  React.useEffect(() => {
+  // Close dropdown on navigation and click outside
+  useEffect(() => {
     setShowDropdown(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+
+    if (showDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showDropdown]);
 
   const handleLogout = async () => {
     await authService.logout();
@@ -105,11 +123,10 @@ const Header = () => {
           {/* Hide login/profile on auth, contact and about pages */}
           {!isContactPage && !isAboutPage && !isLogin && !isRegister && pathname !== "/forgot-password" && (
             user ? (
-              <div className="relative">
+              <div className="relative" ref={dropdownRef}>
                 <button
                   className="flex items-center gap-3 cursor-pointer group p-1 pr-2 rounded-full hover:bg-gray-50 transition-all border border-transparent hover:border-neutral-200"
-                  onClick={(e) => {
-                    e.stopPropagation();
+                  onClick={() => {
                     setShowDropdown((prev) => !prev);
                   }}
                 >

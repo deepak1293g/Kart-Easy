@@ -27,7 +27,7 @@ const App = () => {
           _id: user.id,
         };
         dispatch(loginSuccess(userData));
-        localStorage.setItem("user", JSON.stringify(userData));
+        sessionStorage.setItem("user", JSON.stringify(userData));
       }
     };
 
@@ -43,13 +43,13 @@ const App = () => {
           _id: user.id,
         };
         dispatch(loginSuccess(userData));
-        localStorage.setItem("user", JSON.stringify(userData));
+        sessionStorage.setItem("user", JSON.stringify(userData));
       } else {
         // Handle logout
         dispatch(logout());
-        localStorage.removeItem("user");
-        localStorage.removeItem("access Token");
-        localStorage.removeItem("refresh Token");
+        sessionStorage.removeItem("user");
+        sessionStorage.removeItem("access Token");
+        sessionStorage.removeItem("refresh Token");
       }
     });
 
@@ -64,7 +64,7 @@ const App = () => {
   const isRegister = pathname === "/register";
   const isCartPage = pathname === "/cart";
   const isSearchPage = pathname === "/search";
-  const isProductDetails = matchPath("/productdetails/:id", pathname);
+  const isProductDetails = matchPath("/product/:id/:name", pathname);
 
   const hideLayout =
     isLogin ||

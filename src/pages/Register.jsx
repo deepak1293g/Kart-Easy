@@ -59,9 +59,9 @@ const Register = () => {
 
         if (session) {
           // Sync state and storage
-          localStorage.setItem("user", JSON.stringify(userData));
-          localStorage.setItem("access Token", session.access_token);
-          localStorage.setItem("refresh Token", session.refresh_token);
+          sessionStorage.setItem("user", JSON.stringify(userData));
+          sessionStorage.setItem("access Token", session.access_token);
+          sessionStorage.setItem("refresh Token", session.refresh_token);
 
           dispatch(loginSuccess(userData));
           toast.success("Welcome! Your account has been created successfully.");
@@ -82,12 +82,12 @@ const Register = () => {
   };
 
   return (
-    <div className="w-full h-[calc(100vh-68px)] lg:h-[calc(100vh-80px)] flex items-center justify-center bg-[#0a0a0a] relative overflow-hidden font-outfit">
+    <div className="w-full min-h-[calc(100vh-68px)] lg:min-h-[calc(100vh-80px)] flex items-center justify-center bg-[#0a0a0a] relative overflow-hidden font-outfit py-4">
       {/* Radiant Backgrounds */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-pink-600/10 blur-[120px] rounded-full translate-y-1/2 translate-x-1/2"></div>
 
-      <div className="w-full max-w-5xl flex flex-col lg:flex-row bg-white/[0.02] backdrop-blur-2xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl m-4 animate-in fade-in zoom-in duration-500">
+      <div className="w-full max-w-5xl flex flex-col lg:flex-row bg-white/[0.02] backdrop-blur-2xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl m-2 sm:m-4 animate-in fade-in zoom-in duration-500">
 
         {/* Left Side - Cinematic Branding */}
         <div className="hidden lg:flex lg:w-5/12 bg-gradient-to-br from-black via-zinc-900 to-neutral-800 p-12 flex-col justify-between relative overflow-hidden border-r border-white/5">
@@ -123,11 +123,11 @@ const Register = () => {
         </div>
 
         {/* Right Side - Premium Form */}
-        <div className="lg:w-7/12 p-8 lg:p-12 flex flex-col justify-center bg-transparent overflow-y-auto max-h-full">
+        <div className="lg:w-7/12 p-6 sm:p-8 lg:p-12 flex flex-col justify-center bg-transparent overflow-y-auto max-h-full">
           <div className="w-full max-w-md mx-auto">
-            <div className="mb-8 text-left">
-              <h3 className="text-3xl font-bold text-white mb-2 tracking-tight">Create Profile</h3>
-              <p className="text-zinc-500 text-sm">Input your credentials for nexus authorization.</p>
+            <div className="mb-6 sm:mb-8 text-left">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight">Create Profile</h3>
+              <p className="text-zinc-500 text-xs sm:text-sm">Input your credentials for nexus authorization.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -143,7 +143,7 @@ const Register = () => {
                       name="name"
                       value={data.name}
                       onChange={handleChange}
-                      className="block w-full pl-11 pr-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl text-white placeholder-zinc-700 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-zinc-600 transition-all text-sm"
+                      className="block w-full pl-11 pr-4 py-2.5 sm:py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl text-white placeholder-zinc-700 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-zinc-600 transition-all text-sm"
                       placeholder="John Wick"
                       required
                     />
@@ -161,7 +161,7 @@ const Register = () => {
                       name="email"
                       value={data.email}
                       onChange={handleChange}
-                      className="block w-full pl-11 pr-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl text-white placeholder-zinc-700 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-zinc-600 transition-all text-sm"
+                      className="block w-full pl-11 pr-4 py-2.5 sm:py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl text-white placeholder-zinc-700 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-zinc-600 transition-all text-sm"
                       placeholder="nexus@id.com"
                       required
                     />
@@ -180,7 +180,7 @@ const Register = () => {
                         name="password"
                         value={data.password}
                         onChange={handleChange}
-                        className="block w-full pl-11 pr-11 py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl text-white placeholder-zinc-700 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-zinc-600 transition-all text-sm"
+                        className="block w-full pl-11 pr-11 py-2.5 sm:py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl text-white placeholder-zinc-700 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-zinc-600 transition-all text-sm"
                         placeholder="••••••••"
                         required
                       />
@@ -205,7 +205,7 @@ const Register = () => {
                         name="confirmPassword"
                         value={data.confirmPassword}
                         onChange={handleChange}
-                        className="block w-full pl-11 pr-11 py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl text-white placeholder-zinc-700 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-zinc-600 transition-all text-sm"
+                        className="block w-full pl-11 pr-11 py-2.5 sm:py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl text-white placeholder-zinc-700 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-zinc-600 transition-all text-sm"
                         placeholder="••••••••"
                         required
                       />
@@ -224,7 +224,7 @@ const Register = () => {
               <button
                 type="submit"
                 disabled={loader}
-                className="w-full relative group bg-white text-black py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-neutral-200 transition-all active:scale-[0.98] overflow-hidden disabled:opacity-70 mt-4 shadow-[0_0_30px_rgba(255,255,255,0.05)]"
+                className="w-full relative group bg-white text-black py-3 sm:py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-neutral-200 transition-all active:scale-[0.98] overflow-hidden disabled:opacity-70 mt-4 shadow-[0_0_30px_rgba(255,255,255,0.05)]"
               >
                 <div className="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-45 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
                 {loader ? (

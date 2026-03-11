@@ -63,22 +63,22 @@ const Orders = () => {
                         </div>
                     </div>
                 ) : orders.length > 0 ? (
-                    <div className="space-y-8 md:space-y-12">
+                    <div className="space-y-4 md:space-y-12">
                         {/* Header Section */}
-                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 border-b border-neutral-100 pb-6 md:pb-10">
+                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 border-b border-neutral-100 pb-3 md:pb-10">
                             <div className="space-y-1 md:space-y-2">
-                                <h1 className="text-2xl md:text-4xl font-black tracking-tighter uppercase italic text-black">
+                                <h1 className="text-xl md:text-4xl font-black tracking-tighter uppercase italic text-black">
                                     Your <span className="text-orange-600">Orders</span>
                                 </h1>
-                                <p className="text-[9px] md:text-[10px] font-bold text-neutral-500 uppercase tracking-widest">
+                                <p className="text-[8px] md:text-[10px] font-bold text-neutral-500 uppercase tracking-widest leading-none">
                                     {orders.length} Premium Acquisitions
                                 </p>
                             </div>
 
-                            <div className="bg-neutral-50 px-5 md:px-8 py-4 md:py-5 rounded-xl md:rounded-2xl border border-neutral-100 flex items-center gap-6 md:gap-8 max-w-fit">
+                            <div className="bg-neutral-50 px-4 md:px-8 py-3 md:py-5 rounded-xl md:rounded-2xl border border-neutral-100 flex items-center gap-6 md:gap-8 max-w-fit">
                                 <div className="space-y-0.5 md:space-y-1">
-                                    <p className="text-[8px] md:text-[9px] font-bold text-neutral-500 uppercase tracking-widest">Value</p>
-                                    <p className="text-xl md:text-2xl font-black text-neutral-900">₹{orders.reduce((acc, order) => acc + order.total, 0).toLocaleString()}</p>
+                                    <p className="text-[8px] md:text-[9px] font-bold text-neutral-500 uppercase tracking-widest leading-none">Value</p>
+                                    <p className="text-lg md:text-2xl font-black text-neutral-900 tracking-tight">₹{orders.reduce((acc, order) => acc + order.total, 0).toLocaleString()}</p>
                                 </div>
                             </div>
                         </div>
@@ -92,8 +92,8 @@ const Orders = () => {
                                     className="group relative bg-white rounded-xl md:rounded-2xl p-4 md:p-8 border border-neutral-100 hover:border-neutral-200 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col md:flex-row md:items-center gap-4 md:gap-10"
                                 >
                                     {/* Status Section */}
-                                    <div className="shrink-0 flex md:flex-col items-center md:items-start justify-between md:justify-start gap-3">
-                                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[8px] md:text-[9px] font-bold uppercase tracking-widest border ${order.status === 'Delivered'
+                                    <div className="shrink-0 flex md:flex-col items-center md:items-start justify-between md:justify-start gap-2 md:gap-3">
+                                        <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-lg text-[8px] md:text-[9px] font-bold uppercase tracking-widest border ${order.status === 'Delivered'
                                             ? 'bg-emerald-50 text-emerald-600 border-emerald-100'
                                             : 'bg-orange-50 text-orange-600 border-orange-100'
                                             }`}>
@@ -101,8 +101,7 @@ const Orders = () => {
                                             {order.status}
                                         </div>
                                         <div>
-                                            <p className="text-[8px] md:text-[9px] font-bold text-neutral-500 uppercase tracking-widest leading-none mb-1 hidden md:block">Ref</p>
-                                            <p className="text-[10px] md:text-sm font-black text-neutral-900 leading-none">#{order.id.slice(0, 8).toUpperCase()}</p>
+                                            <p className="text-[8px] font-black text-neutral-900 leading-none">#{order.id.slice(0, 8).toUpperCase()}</p>
                                         </div>
                                     </div>
 
@@ -137,13 +136,13 @@ const Orders = () => {
                                     </div>
 
                                     {/* Price & Action */}
-                                    <div className="shrink-0 flex items-center justify-between md:justify-end gap-6 md:gap-10 pt-3 md:pt-0 border-t md:border-t-0 border-neutral-50 w-full md:w-auto">
+                                    <div className="shrink-0 flex items-center justify-between md:justify-end gap-6 md:gap-10 pt-2.5 md:pt-0 border-t md:border-t-0 border-neutral-50 w-full md:w-auto">
                                         <div className="text-left md:text-right">
-                                            <p className="text-[8px] md:text-[9px] font-bold text-neutral-500 uppercase tracking-widest leading-none mb-1">Total</p>
-                                            <p className="text-xl md:text-2xl font-black text-neutral-900 tracking-tight">₹{order.total.toLocaleString()}</p>
+                                            <p className="text-[8px] font-bold text-neutral-500 uppercase tracking-widest leading-none mb-0.5">Total</p>
+                                            <p className="text-lg md:text-2xl font-black text-neutral-900 tracking-tight leading-none">₹{order.total.toLocaleString()}</p>
                                         </div>
                                         <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-neutral-50 flex items-center justify-center text-neutral-500 group-hover:bg-neutral-900 group-hover:text-white transition-all duration-300">
-                                            <ChevronRight size={16} md:size={18} />
+                                            <ChevronRight size={14} md:size={18} />
                                         </div>
                                     </div>
                                 </div>

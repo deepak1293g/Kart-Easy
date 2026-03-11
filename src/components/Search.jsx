@@ -41,23 +41,23 @@ const Search = () => {
   }, [query]);
 
   return (
-    <div className="w-full min-w-[320px] lg:w-[500px] h-12 lg:h-14 rounded-2xl border border-gray-100 bg-gray-50/50 backdrop-blur-xl focus-within:bg-white focus-within:ring-8 focus-within:ring-black/5 focus-within:border-black transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-black/5 flex items-center justify-between group overflow-hidden">
+    <div className="w-full min-w-[320px] lg:w-[500px] h-10 lg:h-14 rounded-xl lg:rounded-2xl border border-gray-100 bg-gray-50/50 backdrop-blur-xl focus-within:bg-white focus-within:ring-8 focus-within:ring-black/5 focus-within:border-black transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-black/5 flex items-center justify-between group overflow-hidden">
       <div className="font-medium w-full h-full flex items-center justify-between text-base">
         {!isSearchPage ? (
           <div
-            className="w-full h-full flex items-center px-5 cursor-pointer text-gray-400 hover:text-black transition-all duration-300"
+            className="w-full h-full flex items-center px-4 lg:px-5 cursor-pointer text-gray-400 hover:text-black transition-all duration-300"
             onClick={redirectToSearchPage}
           >
-            <div className="flex items-center gap-4 w-full">
-              <BsSearch className="text-neutral-500 group-hover:text-black transition-colors shrink-0" size={18} />
-              <div className="flex-1 text-xs font-bold uppercase tracking-[0.2em] text-neutral-500 group-hover:text-black truncate">
+            <div className="flex items-center gap-3 lg:gap-4 w-full">
+              <BsSearch className="text-neutral-500 group-hover:text-black transition-colors shrink-0" size={16} />
+              <div className="flex-1 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] text-neutral-500 group-hover:text-black truncate">
                 <TypeAnimation
                   sequence={[
-                    'Search Nexus: Premium Audio',
+                    'Search Premium Audio',
                     2000,
-                    'Search Nexus: Elite Tech',
+                    'Search Elite Tech',
                     2000,
-                    'Search Nexus: Masterpiece Art',
+                    'Search Masterpiece Art',
                     2000,
                   ]}
                   wrapper="span"
@@ -65,9 +65,7 @@ const Search = () => {
                   repeat={Infinity}
                 />
               </div>
-              <div className="hidden sm:flex items-center gap-1.5 bg-black/5 px-2.5 py-1.5 rounded-xl border border-black/5 group-hover:bg-black group-hover:text-white transition-all">
-                <span className="text-[9px] font-black tracking-widest">COMMAND K</span>
-              </div>
+
             </div>
           </div>
         ) : (

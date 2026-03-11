@@ -101,16 +101,16 @@ const EditProfile = () => {
 
     return (
         <div className="bg-white min-h-[calc(100vh-80px)] font-urbanist text-neutral-900 pb-12 md:pb-20 overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-4 md:px-6 py-6 md:py-16">
+            <div className="max-w-[1400px] mx-auto px-4 md:px-6 py-4 sm:py-8 md:py-16">
 
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-neutral-100 pb-10">
-                    <div className="space-y-4">
-                        <div className="space-y-1 md:space-y-2">
-                            <h1 className="text-2xl md:text-4xl font-black tracking-tighter uppercase italic text-black">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12 border-b border-neutral-100 pb-6 sm:pb-10">
+                    <div className="space-y-3 sm:space-y-4">
+                        <div className="space-y-0.5 sm:space-y-2">
+                            <h1 className="text-xl sm:text-3xl md:text-4xl font-black tracking-tighter uppercase italic text-black">
                                 Your <span className="text-orange-600">Profile</span>
                             </h1>
-                            <p className="text-[9px] md:text-[10px] font-bold text-neutral-500 uppercase tracking-widest">
+                            <p className="text-[8px] sm:text-[10px] font-bold text-neutral-500 uppercase tracking-widest">
                                 Manage your premium shopping identity
                             </p>
                         </div>
@@ -120,68 +120,68 @@ const EditProfile = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16">
                     {/* Sidebar: Profile Summary */}
                     <div className="lg:col-span-3">
-                        <div className="sticky top-24 space-y-8">
-                            <div className="bg-white rounded-3xl p-8 border border-neutral-100 shadow-sm relative overflow-hidden">
-                                <div className="flex flex-col items-center gap-8">
+                        <div className="sticky top-24 space-y-6 sm:space-y-8">
+                            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-neutral-100 shadow-sm relative overflow-hidden">
+                                <div className="flex flex-col items-center gap-6 sm:gap-8">
                                     {/* Avatar */}
                                     <div className="relative group">
-                                        <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden bg-neutral-50 border border-neutral-100 flex items-center justify-center p-1">
+                                        <div className="w-28 h-28 sm:w-40 sm:h-40 rounded-2xl overflow-hidden bg-neutral-50 border border-neutral-100 flex items-center justify-center p-1">
                                             {user?.profilePic ? (
                                                 <img src={user.profilePic} className="w-full h-full object-cover rounded-xl" alt="profile" />
                                             ) : (
-                                                <User size={60} className="text-neutral-400" strokeWidth={1} />
+                                                <User size={48} sm:size={60} className="text-neutral-400" strokeWidth={1} />
                                             )}
                                         </div>
                                     </div>
 
-                                    <div className="text-center space-y-1">
-                                        <h3 className="text-2xl font-black text-neutral-900 tracking-tight">{user?.name}</h3>
-                                        <p className="text-[9px] font-bold text-neutral-500 uppercase tracking-widest">Verified Account</p>
+                                    <div className="text-center space-y-0.5 sm:space-y-1">
+                                        <h3 className="text-xl sm:text-2xl font-black text-neutral-900 tracking-tight">{user?.name}</h3>
+                                        <p className="text-[8px] sm:text-[9px] font-bold text-neutral-500 uppercase tracking-widest">Verified Account</p>
                                     </div>
 
                                     {/* Stats Grid */}
-                                    <div className="w-full pt-8 border-t border-neutral-50 grid grid-cols-2 gap-4">
+                                    <div className="w-full pt-6 sm:pt-8 border-t border-neutral-50 grid grid-cols-2 gap-4">
                                         <div className="text-center">
-                                            <p className="text-xl font-black text-neutral-900">
+                                            <p className="text-lg sm:text-xl font-black text-neutral-900">
                                                 {(() => {
                                                     const ordersKey = `orders_${user?.email}`;
                                                     const orders = JSON.parse(localStorage.getItem(ordersKey)) || [];
                                                     return orders.length;
                                                 })()}
                                             </p>
-                                            <p className="text-[9px] font-bold text-neutral-500 uppercase tracking-widest">Orders</p>
+                                            <p className="text-[8px] sm:text-[9px] font-bold text-neutral-500 uppercase tracking-widest">Orders</p>
                                         </div>
                                         <div className="text-center border-l border-neutral-50">
-                                            <p className="text-xl font-black text-neutral-900">Elite</p>
-                                            <p className="text-[9px] font-bold text-neutral-500 uppercase tracking-widest">Rank</p>
+                                            <p className="text-lg sm:text-xl font-black text-neutral-900">Elite</p>
+                                            <p className="text-[8px] sm:text-[9px] font-bold text-neutral-500 uppercase tracking-widest">Rank</p>
                                         </div>
                                     </div>
 
                                     {/* Navigation Tabs (Mobile optimized) */}
-                                    <div className="w-full flex flex-col gap-2">
+                                    <div className="w-full flex flex-col gap-1.5 sm:gap-2">
                                         {tabs.map((tab) => (
                                             <button
                                                 key={tab.id}
                                                 onClick={() => setActiveTab(tab.id)}
-                                                className={`flex items-center justify-between p-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${activeTab === tab.id
+                                                className={`flex items-center justify-between p-3.5 sm:p-4 rounded-xl text-[9px] sm:text-[10px] font-black uppercase tracking-widest transition-all ${activeTab === tab.id
                                                     ? 'bg-neutral-900 text-white shadow-lg shadow-black/10'
                                                     : 'bg-neutral-50 text-neutral-500 hover:bg-neutral-100 hover:text-black'
                                                     }`}
                                             >
-                                                <div className="flex items-center gap-3">
-                                                    <tab.icon size={16} />
+                                                <div className="flex items-center gap-2.5 sm:gap-3">
+                                                    <tab.icon size={14} sm:size={16} />
                                                     {tab.label}
                                                 </div>
-                                                <ArrowRight size={14} className={activeTab === tab.id ? 'opacity-100' : 'opacity-0'} />
+                                                <ArrowRight size={12} sm:size={14} className={activeTab === tab.id ? 'opacity-100' : 'opacity-0'} />
                                             </button>
                                         ))}
                                     </div>
 
                                     <button
                                         onClick={() => navigate("/my-orders")}
-                                        className="w-full flex items-center gap-3 p-4 rounded-xl bg-neutral-50 text-neutral-500 hover:bg-neutral-100 hover:text-black text-[10px] font-black uppercase tracking-widest transition-all"
+                                        className="w-full flex items-center gap-2.5 sm:gap-3 p-3.5 sm:p-4 rounded-xl bg-neutral-50 text-neutral-500 hover:bg-neutral-100 hover:text-black text-[9px] sm:text-[10px] font-black uppercase tracking-widest transition-all"
                                     >
-                                        <ShoppingBag size={16} />
+                                        <ShoppingBag size={14} sm:size={16} />
                                         Order History
                                     </button>
                                 </div>
@@ -191,7 +191,7 @@ const EditProfile = () => {
 
                     {/* Main Content: Forms */}
                     <div className="lg:col-span-9" ref={formRef}>
-                        <div className="bg-white rounded-3xl p-6 md:p-12 border border-neutral-100 shadow-xl shadow-neutral-100/50">
+                        <div className="bg-white rounded-3xl p-5 sm:p-10 md:p-12 border border-neutral-100 shadow-xl shadow-neutral-100/50">
                             <AnimatePresence mode="wait">
                                 {activeTab === "identity" && (
                                     <motion.div
@@ -199,15 +199,15 @@ const EditProfile = () => {
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: -10 }}
-                                        className="space-y-10"
+                                        className="space-y-6 sm:space-y-8 md:space-y-10"
                                     >
                                         <div className="space-y-1">
-                                            <h2 className="text-xl md:text-2xl font-black text-neutral-900 tracking-tight uppercase italic">Personal Identity</h2>
-                                            <p className="text-neutral-500 font-bold text-[10px] uppercase tracking-widest">Update your workspace credentials</p>
+                                            <h2 className="text-lg sm:text-xl md:text-2xl font-black text-neutral-900 tracking-tight uppercase italic">Personal Identity</h2>
+                                            <p className="text-neutral-500 font-bold text-[9px] sm:text-[10px] uppercase tracking-widest">Update your workspace credentials</p>
                                         </div>
 
-                                        <form onSubmit={handleSubmit} className="space-y-10">
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8 md:space-y-10">
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                                                 <div className="space-y-3">
                                                     <label className="text-[10px] font-black uppercase tracking-widest text-neutral-500 ml-1">Full Name</label>
                                                     <div className="relative">
@@ -239,7 +239,7 @@ const EditProfile = () => {
                                                 </div>
                                             </div>
 
-                                            <div className="pt-10 border-t border-neutral-50 flex items-center justify-between gap-6">
+                                            <div className="pt-6 sm:pt-10 border-t border-neutral-50 flex items-center justify-between gap-6">
                                                 <div className="hidden md:flex items-center gap-4 text-neutral-500">
                                                     <ShieldCheck size={20} />
                                                     <p className="text-[9px] font-black uppercase tracking-widest max-w-[100px]">Secure Identity Protocol Active</p>
@@ -247,10 +247,10 @@ const EditProfile = () => {
                                                 <button
                                                     type="submit"
                                                     disabled={loading}
-                                                    className="w-full md:w-auto px-12 py-4 bg-black text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-neutral-800 transition-all flex items-center justify-center gap-3 active:scale-95 disabled:opacity-50"
+                                                    className="w-full md:w-auto px-10 py-3.5 sm:px-12 sm:py-4 bg-black text-white rounded-xl font-black text-[9px] sm:text-[10px] uppercase tracking-widest hover:bg-neutral-800 transition-all flex items-center justify-center gap-3 active:scale-95 disabled:opacity-50"
                                                 >
-                                                    {loading ? <LoaderIcon className="animate-spin" size={18} /> : (
-                                                        <>Commit Changes <Save size={16} /></>
+                                                    {loading ? <LoaderIcon className="animate-spin" size={16} /> : (
+                                                        <>Commit Changes <Save size={14} /></>
                                                     )}
                                                 </button>
                                             </div>
@@ -271,8 +271,8 @@ const EditProfile = () => {
                                             <p className="text-neutral-500 font-bold text-[10px] uppercase tracking-widest">Reset your access sequence</p>
                                         </div>
 
-                                        <form onSubmit={handlePasswordSubmit} className="space-y-10">
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <form onSubmit={handlePasswordSubmit} className="space-y-6 sm:space-y-8 md:space-y-10">
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                                                 <div className="space-y-3">
                                                     <label className="text-[10px] font-black uppercase tracking-widest text-neutral-500 ml-1">New PIN</label>
                                                     <div className="relative">
@@ -320,7 +320,7 @@ const EditProfile = () => {
                                                 </div>
                                             </div>
 
-                                            <div className="pt-10 border-t border-neutral-50 flex items-center justify-between gap-6">
+                                            <div className="pt-6 sm:pt-10 border-t border-neutral-50 flex items-center justify-between gap-6">
                                                 <div className="hidden md:flex items-center gap-4 text-neutral-500">
                                                     <Lock size={20} />
                                                     <p className="text-[9px] font-black uppercase tracking-widest max-w-[100px]">End-to-End Encryption Active</p>
@@ -328,10 +328,10 @@ const EditProfile = () => {
                                                 <button
                                                     type="submit"
                                                     disabled={passwordLoading}
-                                                    className="w-full md:w-auto px-12 py-4 bg-black text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-neutral-800 transition-all flex items-center justify-center gap-3 active:scale-95 disabled:opacity-50"
+                                                    className="w-full md:w-auto px-10 py-3.5 sm:px-12 sm:py-4 bg-black text-white rounded-xl font-black text-[9px] sm:text-[10px] uppercase tracking-widest hover:bg-neutral-800 transition-all flex items-center justify-center gap-3 active:scale-95 disabled:opacity-50"
                                                 >
-                                                    {passwordLoading ? <LoaderIcon className="animate-spin" size={18} /> : (
-                                                        <>Update PIN <ArrowRight size={16} /></>
+                                                    {passwordLoading ? <LoaderIcon className="animate-spin" size={16} /> : (
+                                                        <>Update PIN <ArrowRight size={14} /></>
                                                     )}
                                                 </button>
                                             </div>

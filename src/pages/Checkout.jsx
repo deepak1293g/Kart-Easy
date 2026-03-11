@@ -134,58 +134,58 @@ const Checkout = () => {
             <main className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2">
 
                 {/* Left Column: Shipping Info */}
-                <div className="p-8 lg:p-20 border-r border-neutral-100">
-                    <div className="max-w-xl mx-auto space-y-12">
-                        <h1 className="text-4xl font-black tracking-tighter uppercase italic text-black">
+                <div className="p-6 sm:p-12 lg:p-20 border-r border-neutral-100">
+                    <div className="max-w-xl mx-auto space-y-8 sm:space-y-12">
+                        <h1 className="text-3xl sm:text-4xl font-black tracking-tighter uppercase italic text-black">
                             Checkout <span className="text-orange-600">Page</span>
                         </h1>
 
                         {/* Form Fields */}
-                        <form className="space-y-6">
-                            <h2 className="text-sm font-black uppercase tracking-[0.2em] text-orange-600">Shipping Information</h2>
+                        <form className="space-y-4 sm:space-y-6">
+                            <h2 className="text-[10px] sm:text-sm font-black uppercase tracking-[0.2em] text-orange-600">Shipping Information</h2>
 
-                            <div className="space-y-2">
-                                <label className="text-xs font-black uppercase tracking-wider text-neutral-900">Full name <span className="text-orange-600">*</span></label>
+                            <div className="space-y-1.5 sm:space-y-2">
+                                <label className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-neutral-900">Full name <span className="text-orange-600">*</span></label>
                                 <input
                                     type="text" name="fullName" value={formData.fullName} onChange={handleChange}
                                     placeholder="Enter full name"
-                                    className="w-full bg-white border border-neutral-200 rounded-xl px-5 py-4 focus:ring-1 focus:ring-orange-600 focus:border-orange-600 outline-none transition-all font-medium"
+                                    className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 sm:px-5 sm:py-4 focus:ring-1 focus:ring-orange-600 focus:border-orange-600 outline-none transition-all font-medium text-sm sm:text-base"
                                     required
                                 />
                             </div>
 
-                            <div className="space-y-2">
-                                <label className="text-xs font-black uppercase tracking-wider text-neutral-900">Email address <span className="text-orange-600">*</span></label>
+                            <div className="space-y-1.5 sm:space-y-2">
+                                <label className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-neutral-900">Email address <span className="text-orange-600">*</span></label>
                                 <input
                                     type="email" name="email" value={formData.email} onChange={handleChange}
                                     placeholder="Enter email address"
-                                    className="w-full bg-white border border-neutral-200 rounded-xl px-5 py-4 focus:ring-1 focus:ring-orange-600 focus:border-orange-600 outline-none transition-all font-medium"
+                                    className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 sm:px-5 sm:py-4 focus:ring-1 focus:ring-orange-600 focus:border-orange-600 outline-none transition-all font-medium text-sm sm:text-base"
                                     required
                                 />
                             </div>
 
-                            <div className="space-y-2">
-                                <label className="text-xs font-black uppercase tracking-wider text-neutral-900">Phone number <span className="text-orange-600">*</span></label>
+                            <div className="space-y-1.5 sm:space-y-2">
+                                <label className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-neutral-900">Phone number <span className="text-orange-600">*</span></label>
                                 <div className="flex bg-white border border-neutral-200 rounded-xl overflow-hidden focus-within:ring-1 focus-within:ring-orange-600 transition-all">
-                                    <div className="px-4 border-r border-neutral-100 flex items-center gap-2 text-neutral-900 bg-neutral-50/50 cursor-pointer font-bold">
-                                        <span className="text-lg">🇮🇳</span>
-                                        <ChevronRight className="rotate-90" size={12} />
+                                    <div className="px-3 sm:px-4 border-r border-neutral-100 flex items-center gap-1.5 sm:gap-2 text-neutral-900 bg-neutral-50/50 cursor-pointer font-bold">
+                                        <span className="text-base sm:text-lg">🇮🇳</span>
+                                        <ChevronRight className="rotate-90" size={10} />
                                     </div>
                                     <input
                                         type="tel" name="phone" value={formData.phone} onChange={handleChange}
                                         placeholder="Enter phone number"
-                                        className="flex-1 px-5 py-4 outline-none font-medium"
+                                        className="flex-1 px-4 py-3 sm:px-5 sm:py-4 outline-none font-medium text-sm sm:text-base"
                                         required
                                     />
                                 </div>
                             </div>
 
-                            <div className="space-y-2">
-                                <label className="text-xs font-black uppercase tracking-wider text-neutral-900">Country <span className="text-orange-600">*</span></label>
+                            <div className="space-y-1.5 sm:space-y-2">
+                                <label className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-neutral-900">Country <span className="text-orange-600">*</span></label>
                                 <div className="relative">
                                     <select
                                         name="country" value={formData.country} onChange={handleChange}
-                                        className="w-full bg-white border border-neutral-200 rounded-xl px-5 py-4 appearance-none outline-none focus:ring-1 focus:ring-orange-600 transition-all font-medium text-neutral-700"
+                                        className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 sm:px-5 sm:py-4 appearance-none outline-none focus:ring-1 focus:ring-orange-600 transition-all font-medium text-neutral-700 text-sm sm:text-base"
                                         required
                                     >
                                         <option value="">Choose State / Country</option>
@@ -193,33 +193,33 @@ const Checkout = () => {
                                         <option value="New York">New York</option>
                                         <option value="California">California</option>
                                     </select>
-                                    <ChevronRight className="absolute right-5 top-1/2 -translate-y-1/2 rotate-90 text-neutral-500 pointer-events-none" size={16} />
+                                    <ChevronRight className="absolute right-4 sm:right-5 top-1/2 -translate-y-1/2 rotate-90 text-neutral-500 pointer-events-none" size={14} />
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div className="space-y-2">
-                                    <label className="text-xs font-black uppercase tracking-wider text-neutral-900">City</label>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                                <div className="space-y-1.5 sm:space-y-2">
+                                    <label className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-neutral-900">City</label>
                                     <input
                                         type="text" name="city" value={formData.city} onChange={handleChange}
                                         placeholder="Enter city"
-                                        className="w-full bg-white border border-neutral-200 rounded-xl px-5 py-4 outline-none focus:ring-1 focus:ring-orange-600 font-medium"
+                                        className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 sm:px-5 sm:py-4 outline-none focus:ring-1 focus:ring-orange-600 font-medium text-sm sm:text-base"
                                     />
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-xs font-black uppercase tracking-wider text-neutral-900">State</label>
+                                <div className="space-y-1.5 sm:space-y-2">
+                                    <label className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-neutral-900">State</label>
                                     <input
                                         type="text" name="state" value={formData.state} onChange={handleChange}
                                         placeholder="Enter state"
-                                        className="w-full bg-white border border-neutral-200 rounded-xl px-5 py-4 outline-none focus:ring-1 focus:ring-orange-600 font-medium"
+                                        className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 sm:px-5 sm:py-4 outline-none focus:ring-1 focus:ring-orange-600 font-medium text-sm sm:text-base"
                                     />
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-xs font-black uppercase tracking-wider text-neutral-900">ZIP Code</label>
+                                <div className="space-y-1.5 sm:space-y-2">
+                                    <label className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-neutral-900">ZIP Code</label>
                                     <input
                                         type="text" name="zipCode" value={formData.zipCode} onChange={handleChange}
                                         placeholder="Enter ZIP code"
-                                        className="w-full bg-white border border-neutral-200 rounded-xl px-5 py-4 outline-none focus:ring-1 focus:ring-orange-600 font-medium"
+                                        className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 sm:px-5 sm:py-4 outline-none focus:ring-1 focus:ring-orange-600 font-medium text-sm sm:text-base"
                                     />
                                 </div>
                             </div>
@@ -243,70 +243,70 @@ const Checkout = () => {
                 </div>
 
                 {/* Right Column: Order Summary */}
-                <div className="bg-neutral-50/50 p-8 lg:p-20">
-                    <div className="max-w-xl mx-auto space-y-12">
-                        <h2 className="text-2xl font-black tracking-tighter uppercase italic">Review your cart</h2>
+                <div className="bg-neutral-50/50 p-6 sm:p-12 lg:p-20">
+                    <div className="max-w-xl mx-auto space-y-8 sm:space-y-12">
+                        <h2 className="text-xl sm:text-2xl font-black tracking-tighter uppercase italic">Review your cart</h2>
 
                         {/* Items List */}
-                        <div className="space-y-8 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar">
+                        <div className="space-y-6 sm:space-y-8 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar">
                             {checkoutItems.map((item) => (
-                                <div key={item.id} className="flex gap-6 items-center group">
-                                    <div className="w-20 h-20 bg-white rounded-xl border border-neutral-100 flex items-center justify-center overflow-hidden shrink-0 shadow-sm p-2 group-hover:border-orange-200 transition-all">
+                                <div key={item.id} className="flex gap-4 sm:gap-6 items-center group">
+                                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-xl border border-neutral-100 flex items-center justify-center overflow-hidden shrink-0 shadow-sm p-2 group-hover:border-orange-200 transition-all">
                                         <img src={item.thumbnail} alt={item.title} className="w-full h-full object-contain" />
                                     </div>
-                                    <div className="flex-1 space-y-1">
-                                        <h4 className="font-black text-neutral-900 uppercase tracking-tight text-sm">{item.title}</h4>
-                                        <p className="text-xs text-neutral-500 font-black uppercase tracking-widest">{item.quantity}x Units</p>
+                                    <div className="flex-1 space-y-0.5 sm:space-y-1">
+                                        <h4 className="font-black text-neutral-900 uppercase tracking-tight text-xs sm:text-sm">{item.title}</h4>
+                                        <p className="text-[10px] text-neutral-500 font-black uppercase tracking-widest">{item.quantity}x Units</p>
                                     </div>
                                     <div className="text-right">
-                                        <p className="font-black text-black text-lg tracking-tighter">₹{(item.price * item.quantity).toLocaleString()}</p>
+                                        <p className="font-black text-black text-base sm:text-lg tracking-tighter">₹{(item.price * item.quantity).toLocaleString()}</p>
                                     </div>
                                 </div>
                             ))}
                         </div>
 
                         {/* Financials Summary */}
-                        <div className="space-y-5 pt-8 border-t-2 border-dashed border-neutral-200">
-                            <div className="flex justify-between text-neutral-600 font-black uppercase tracking-tighter text-sm">
+                        <div className="space-y-4 sm:space-y-5 pt-6 sm:pt-8 border-t-2 border-dashed border-neutral-200">
+                            <div className="flex justify-between text-neutral-600 font-black uppercase tracking-tighter text-xs sm:text-sm">
                                 <span>Subtotal</span>
                                 <span className="text-neutral-900 font-black">₹{subTotal.toLocaleString()}</span>
                             </div>
-                            <div className="flex justify-between text-neutral-600 font-black uppercase tracking-tighter text-sm">
+                            <div className="flex justify-between text-neutral-600 font-black uppercase tracking-tighter text-xs sm:text-sm">
                                 <span>Discount (1%)</span>
                                 <span className="text-orange-600 font-black">-₹{discountAmount.toLocaleString()}</span>
                             </div>
-                            <div className="flex justify-between text-neutral-600 font-black uppercase tracking-tighter text-sm">
+                            <div className="flex justify-between text-neutral-600 font-black uppercase tracking-tighter text-xs sm:text-sm">
                                 <span>Shipping</span>
                                 <span className="text-neutral-900 font-black">
                                     {shippingCost === 0 ? <span className="text-emerald-600">FREE SHIPPING</span> : `₹${shippingCost}`}
                                 </span>
                             </div>
-                            <div className="pt-8 border-t-2 border-black flex justify-between items-baseline">
-                                <span className="text-2xl font-black uppercase tracking-tighter italic">Total</span>
+                            <div className="pt-6 sm:pt-8 border-t-2 border-black flex justify-between items-baseline">
+                                <span className="text-xl sm:text-2xl font-black uppercase tracking-tighter italic">Total</span>
                                 <div className="text-right">
-                                    <span className="text-4xl font-black tracking-tighter text-black">₹{finalTotal.toLocaleString()}</span>
+                                    <span className="text-3xl sm:text-4xl font-black tracking-tighter text-black">₹{finalTotal.toLocaleString()}</span>
                                     <p className="text-[10px] font-black text-neutral-500 tracking-widest uppercase">Inc. all taxes</p>
                                 </div>
                             </div>
                         </div>
 
                         {/* CTA and Security */}
-                        <div className="space-y-8">
+                        <div className="space-y-6 sm:space-y-8">
                             <button
                                 onClick={handlePlaceOrder}
                                 disabled={loading || !agreement}
-                                className="w-full bg-black hover:bg-neutral-800 disabled:opacity-50 text-white py-6 rounded-xl font-black text-xl uppercase tracking-[0.2em] transition-all shadow-2xl shadow-neutral-300 active:scale-[0.98] flex items-center justify-center gap-3"
+                                className="w-full bg-black hover:bg-neutral-800 disabled:opacity-50 text-white py-4 sm:py-6 rounded-xl font-black text-lg sm:text-xl uppercase tracking-[0.2em] transition-all shadow-2xl shadow-neutral-300 active:scale-[0.98] flex items-center justify-center gap-3"
                             >
                                 {loading ? <LoaderIcon className="animate-spin" /> : "Pay Now"}
                             </button>
 
                             {/* Trust Badge */}
-                            <div className="space-y-4">
-                                <div className="flex items-center gap-3 text-orange-600">
-                                    <Lock size={18} strokeWidth={3} />
-                                    <span className="font-black text-sm tracking-widest uppercase">Secure SSL Encrypted Checkout</span>
+                            <div className="space-y-3 sm:space-y-4">
+                                <div className="flex items-center gap-2 sm:gap-3 text-orange-600">
+                                    <Lock size={16} sm:size={18} strokeWidth={3} />
+                                    <span className="font-black text-[10px] sm:text-xs lg:text-sm tracking-widest uppercase">Secure SSL Encrypted Checkout</span>
                                 </div>
-                                <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-wider leading-relaxed max-w-sm">
+                                <p className="text-[9px] sm:text-[10px] font-bold text-neutral-500 uppercase tracking-wider leading-relaxed max-w-sm">
                                     Your personal and financial data is encrypted and secure. We do not store your credit card information.
                                 </p>
                             </div>
