@@ -136,7 +136,7 @@ const OrderDetails = () => {
     return (
         <>
             <div ref={receiptRef} className="w-full min-h-[calc(100vh-80px)] bg-white font-urbanist text-neutral-900 pb-24 overflow-x-hidden">
-                <div className="max-w-[1400px] mx-auto px-10 py-10 md:py-20">
+                <div className="max-w-[1400px] mx-auto px-2 py-10 md:py-20">
 
                     {/* Header Section */}
                     <motion.div

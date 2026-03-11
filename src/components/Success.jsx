@@ -36,7 +36,7 @@ const Success = () => {
       <div className="absolute top-0 right-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-orange-600/5 rounded-full blur-[120px] -mr-40 -mt-40 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-neutral-100 rounded-full blur-[120px] -ml-40 -mb-40 pointer-events-none" />
 
-      <div className="px-5 md:px-20 lg:px-32 relative z-10 w-full max-w-7xl mx-auto py-10 md:py-20">
+      <div className="px-2 md:px-20 lg:px-32 relative z-10 w-full max-w-7xl mx-auto py-10 md:py-20">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}

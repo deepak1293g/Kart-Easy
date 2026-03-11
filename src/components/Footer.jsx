@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer>
       <ScrollReveal>
-        <div className="flex flex-wrap md:flex-nowrap items-start justify-between px-6 md:px-16 lg:px-32 gap-y-10 md:gap-10 py-14 border-b border-gray-500/30 text-neutral-600">
+        <div className="max-w-[1400px] mx-auto flex flex-wrap md:flex-nowrap items-start justify-between px-2 md:px-12 lg:px-16 gap-y-10 md:gap-10 py-14 border-b border-gray-500/30 text-neutral-600">
           <div className="w-full md:w-2/5">
             <img className="w-28 md:w-32" src="/logo.png" alt="logo" />
             <p className="mt-6 text-sm">
