@@ -231,8 +231,8 @@ const OrderDetails = () => {
                         </div>
 
                         {/* Order Items */}
-                        <div className="space-y-6 mt-12">
-                            <div className="flex items-center justify-between mt-12 mb-8 px-2">
+                        <div className="space-y-6 mt-16">
+                            <div className="flex items-center justify-between mb-8">
                                 <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-neutral-500">Inventory Allocation</h2>
                                 <span className="text-[9px] font-bold text-neutral-500 uppercase tracking-widest">{order.items.length} Assets</span>
                             </div>
