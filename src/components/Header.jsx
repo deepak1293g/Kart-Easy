@@ -79,7 +79,7 @@ const Header = () => {
 
   return (
     <header className="h-auto py-2 lg:shadow-md sticky top-0 z-40 flex flex-col justify-center gap-1 bg-white">
-      <div className="container mx-auto flex items-center px-5 sm:px-10 justify-between">
+      <div className="container mx-auto flex items-center px-10 justify-between">
         <Link to="/" className="h-full flex items-center">
           <img
             src={logo}
@@ -187,7 +187,7 @@ const Header = () => {
         </div>
       </div>
       {!shouldHideSearchAndCart && !isAboutPage && !isContactPage && (
-        <div className="container mx-auto px-5 lg:hidden">
+        <div className="container mx-auto px-10 lg:hidden">
           <Search />
         </div>
       )}
