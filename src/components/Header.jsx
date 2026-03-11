@@ -85,7 +85,7 @@ const Header = () => {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="glass sticky top-0 z-40 w-full py-2 lg:py-4 transition-all duration-500"
     >
-      <div className="max-w-[1400px] mx-auto flex items-center px-2 justify-between gap-4 md:gap-14">
+      <div className="max-w-[1400px] mx-auto flex items-center px-6 justify-between gap-4 md:gap-14">
         <motion.div
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -214,7 +214,7 @@ const Header = () => {
         </div>
       </div>
       {!shouldHideSearchAndCart && !isAboutPage && !isContactPage && (
-        <div className="max-w-[1400px] mx-auto px-2 lg:hidden mt-3">
+        <div className="max-w-[1400px] mx-auto px-6 lg:hidden mt-3">
           <Search />
         </div>
       )}
