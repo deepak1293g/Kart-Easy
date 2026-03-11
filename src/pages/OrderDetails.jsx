@@ -134,7 +134,7 @@ const OrderDetails = () => {
 
     return (
         <div ref={receiptRef} className="w-full min-h-[calc(100vh-80px)] bg-white font-urbanist text-neutral-900 pb-20">
-            <div className="max-w-[1400px] mx-auto px-8 py-6 md:py-12">
+            <div className="max-w-[1400px] mx-auto px-5 sm:px-10 py-6 md:py-12">
 
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-6 md:mb-8 border-b border-neutral-100 pb-4 md:pb-6">
@@ -328,7 +328,7 @@ const OrderDetails = () => {
                             <div className="space-y-4 pt-10 border-t-2 border-dashed border-neutral-100">
                                 <p className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em]">Final Settlement</p>
                                 <div className="flex items-baseline justify-between gap-4">
-                                    <h3 className="text-4xl sm:text-5xl md:text-6xl font-black text-neutral-900 tracking-tighter shrink-0">₹{order.total.toLocaleString()}</h3>
+                                    <h3 className="text-3xl sm:text-5xl md:text-6xl font-black text-neutral-900 tracking-tighter shrink-0">₹{order.total.toLocaleString()}</h3>
                                     <div className="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center shadow-lg shadow-black/10 shrink-0">
                                         <ShieldCheck size={24} />
                                     </div>

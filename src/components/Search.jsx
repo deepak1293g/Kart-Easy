@@ -41,7 +41,7 @@ const Search = () => {
   }, [query]);
 
   return (
-    <div className="w-full min-w-[320px] lg:w-[500px] h-10 lg:h-14 rounded-xl lg:rounded-2xl border border-gray-100 bg-gray-50/50 backdrop-blur-xl focus-within:bg-white focus-within:ring-8 focus-within:ring-black/5 focus-within:border-black transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-black/5 flex items-center justify-between group overflow-hidden">
+    <div className="w-full lg:w-[500px] h-10 lg:h-14 rounded-xl lg:rounded-2xl border border-gray-100 bg-gray-50/50 backdrop-blur-xl focus-within:bg-white focus-within:ring-8 focus-within:ring-black/5 focus-within:border-black transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-black/5 flex items-center justify-between group overflow-hidden">
       <div className="font-medium w-full h-full flex items-center justify-between text-base">
         {!isSearchPage ? (
           <div
