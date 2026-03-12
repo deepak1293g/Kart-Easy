@@ -139,12 +139,12 @@ const Header = () => {
             user ? (
               <div className="relative" ref={dropdownRef}>
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 cursor-pointer group p-0.5 rounded-2xl bg-neutral-50 border border-neutral-100 hover:border-neutral-200 transition-all shadow-sm hover:shadow-md overflow-hidden"
+                  whileHover={{ y: -1 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex items-center gap-2 cursor-pointer group p-0.5 rounded-2xl bg-neutral-50 border border-neutral-100/50 hover:bg-neutral-100/50 transition-all overflow-hidden"
                   onClick={() => setShowDropdown((prev) => !prev)}
                 >
-                  <div className="w-9 h-9 md:w-11 md:h-11 rounded-2xl bg-white flex items-center justify-center overflow-hidden">
+                  <div className="w-9 h-9 md:w-11 md:h-11 rounded-2xl bg-white flex items-center justify-center overflow-hidden border border-neutral-100 shadow-sm">
                     {user.profilePic ? (
                       <img src={user.profilePic} className="w-full h-full object-cover" alt="profile" />
                     ) : (
@@ -152,7 +152,7 @@ const Header = () => {
                     )}
                   </div>
                   <div className="pr-3 hidden md:block">
-                    <ChevronDown size={14} className={`text-neutral-400 transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`} />
+                    <ChevronDown size={14} className={`text-neutral-400 transition-transform duration-500 ${showDropdown ? 'rotate-180' : ''}`} />
                   </div>
                 </motion.button>
 
@@ -160,39 +160,49 @@ const Header = () => {
                 <AnimatePresence>
                   {showDropdown && (
                     <motion.div
-                      initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                      initial={{ opacity: 0, y: 10, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 15, scale: 0.95 }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="absolute right-0 mt-3 w-56 glass-dark rounded-[2rem] overflow-hidden py-2 z-50 shadow-2xl shadow-black/20"
+                      exit={{ opacity: 0, y: 10, scale: 0.98 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      className="absolute right-0 mt-2 w-52 bg-white border border-neutral-100 rounded-[1.5rem] overflow-hidden p-1.5 z-50 shadow-2xl shadow-neutral-200/40"
                     >
-                      <div className="px-4 py-3 border-b border-white/10 mb-2">
-                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400">Authenticated Node</p>
-                        <p className="text-sm font-bold text-white truncate">{user.name}</p>
+                      <div className="px-4 py-3">
+                        <p className="text-[8px] font-black uppercase tracking-[0.2em] text-neutral-400 mb-0.5">Signed in as</p>
+                        <p className="text-xs font-black text-neutral-900 truncate italic">{user.name}</p>
                       </div>
-                      <Link
-                        to="/edit-profile"
-                        className="flex items-center gap-3 px-5 py-3.5 text-xs font-bold uppercase tracking-widest text-neutral-300 hover:text-white hover:bg-white/5 transition-all"
-                        onClick={() => setShowDropdown(false)}
-                      >
-                        <User size={16} />
-                        Identity Profile
-                      </Link>
-                      <Link
-                        to="/my-orders"
-                        className="flex items-center gap-3 px-5 py-3.5 text-xs font-bold uppercase tracking-widest text-neutral-300 hover:text-white hover:bg-white/5 transition-all"
-                        onClick={() => setShowDropdown(false)}
-                      >
-                        <ShoppingBag size={16} />
-                        Asset History
-                      </Link>
-                      <div className="h-px bg-white/10 my-2 mx-4"></div>
+
+                      <div className="h-px bg-neutral-50 mx-2" />
+
+                      <div className="py-1">
+                        <Link
+                          to="/edit-profile"
+                          className="flex items-center gap-2.5 px-3 py-2.5 text-[10px] font-bold uppercase tracking-widest text-neutral-500 hover:text-black hover:bg-neutral-50 rounded-xl transition-all"
+                          onClick={() => setShowDropdown(false)}
+                        >
+                          <User size={13} className="text-neutral-400" />
+                          Profile
+                        </Link>
+
+                        <div className="h-px bg-neutral-50 mx-2" />
+
+                        <Link
+                          to="/my-orders"
+                          className="flex items-center gap-2.5 px-3 py-2.5 text-[10px] font-bold uppercase tracking-widest text-neutral-500 hover:text-black hover:bg-neutral-50 rounded-xl transition-all"
+                          onClick={() => setShowDropdown(false)}
+                        >
+                          <ShoppingBag size={13} className="text-neutral-400" />
+                          Orders
+                        </Link>
+                      </div>
+
+                      <div className="h-px bg-neutral-50 mx-2" />
+
                       <button
                         onClick={handleLogout}
-                        className="w-full flex items-center gap-3 px-5 py-4 text-xs font-black uppercase tracking-widest text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all"
+                        className="w-full flex items-center gap-2.5 px-3 py-3 text-[10px] font-black uppercase tracking-[0.2em] text-red-500 hover:bg-red-50 rounded-xl transition-all"
                       >
-                        <LogOut size={16} />
-                        Deauthorize
+                        <LogOut size={13} />
+                        Logout
                       </button>
                     </motion.div>
                   )}

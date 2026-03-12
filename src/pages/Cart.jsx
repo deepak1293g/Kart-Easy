@@ -45,10 +45,10 @@ const Cart = () => {
   return (
     <div className="bg-[#fcfcfc] min-h-screen font-urbanist text-neutral-900 pb-20 overflow-x-hidden">
 
-      <main className="max-w-[1400px] mx-auto px-4 sm:px-6 py-6 sm:py-12 md:py-12 flex flex-col lg:flex-row gap-8 md:gap-10 relative z-10">
+      <main className="max-w-[1400px] mx-auto px-4 sm:px-6 py-4 sm:py-8 md:py-8 flex flex-col lg:flex-row gap-8 md:gap-10 relative z-10">
 
         <div className="flex-[1.6] space-y-6 md:space-y-8">
-          <h1 className="text-[28px] sm:text-3xl md:text-3xl font-black tracking-tighter uppercase italic text-black">
+          <h1 className="text-3xl sm:text-4xl font-black tracking-tighter uppercase italic text-black">
             Your <span className="text-orange-600">Cart</span>
           </h1>
 
