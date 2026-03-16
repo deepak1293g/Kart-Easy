@@ -32,13 +32,13 @@ const CartItem = ({ item }) => {
       {/* Info Section */}
       <div className="flex-1 flex flex-col justify-between py-0.5 sm:py-1">
         <div className="space-y-1 md:space-y-1">
-          <h3 className="text-[12px] sm:text-lg md:text-lg font-black text-black tracking-tight uppercase leading-tight line-clamp-1">
+          <h3 className="text-[15px] sm:text-xl md:text-xl font-bold text-black tracking-tight leading-tight line-clamp-1">
             {item.title}
           </h3>
         </div>
 
         <div className="flex flex-row items-center justify-between gap-2 mt-auto flex-nowrap">
-          <div className="text-[11px] sm:text-lg md:text-xl font-bold text-black tracking-tighter shrink-0">
+          <div className="text-[14px] sm:text-xl md:text-2xl font-bold text-black tracking-tighter shrink-0">
             ₹{item.price.toLocaleString()}
           </div>
 
@@ -51,7 +51,7 @@ const CartItem = ({ item }) => {
               >
                 <Minus size={8} sm:size={14} strokeWidth={3} />
               </button>
-              <span className="w-5 sm:w-10 text-center font-bold text-black text-[9px] sm:text-sm">{item.quantity}</span>
+              <span className="w-5 sm:w-10 text-center font-bold text-black text-[11px] sm:text-base">{item.quantity}</span>
               <button
                 onClick={() => handleQuantityChange(item.quantity + 1)}
                 className="w-5 h-5 sm:w-8 sm:h-8 rounded-md flex items-center justify-center hover:bg-neutral-50 transition-all text-neutral-400 hover:text-black"
